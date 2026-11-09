@@ -4,127 +4,446 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devansh & Raksha - Wedding Invitation</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Yatra+One&family=Rozha+One&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: {
+                            800: '#800f2f',
+                            900: '#590d22',
+                            950: '#38040e',
+                        },
+                        rose: {
+                            100: '#fff0f3',
+                            200: '#ffccd5',
+                            300: '#ffb3c1',
+                            400: '#ff8fa3',
+                            500: '#ff4d6d',
+                            600: '#c9184a',
+                        },
+                        gold: {
+                            300: '#f6d370',
+                            400: '#d4af37',
+                            500: '#b8860b',
+                            600: '#996515',
+                        },
+                        cream: '#fffafb',
+                    },
+                    fontFamily: {
+                        hindi: ['"Tiro Devanagari Hindi"', 'serif'],
+                        heading: ['"Rozha One"', '"Yatra One"', 'serif'],
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        royal: ['"Cinzel Decorative"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body {
-            background-color: #ffe4e8; /* Light Baby Pink */
-            color: #5c0011; /* Rich Maroon */
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 100 100"><text x="10" y="50" font-size="40" fill="%23ffb3c6">🌸</text></svg>');
-            background-repeat: repeat-y;
-            background-position: left top, right top;
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.92);
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
-            border-radius: 15px;
-            border: 2px solid #e5989b;
-            position: relative;
+        ::-webkit-scrollbar-track {
+            background: #ffe4e8;
         }
-        h1, h2, h3 { color: #800f2f; margin-bottom: 10px; }
-        .event-card {
-            border: 1px dashed #ffb3c6;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-            background: #fff9fa;
+        ::-webkit-scrollbar-thumb {
+            background: #ff8fa3;
+            border-radius: 3px;
         }
-        .map-btn {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 12px 24px;
-            background-color: #ff4d6d;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s ease;
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #800f2f 0%, #b8860b 50%, #590d22 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .map-btn:hover { background-color: #c9184a; }
-        .bullet-list {
-            list-style-type: none;
-            padding-left: 0;
+
+        /* Light Elegant Card Styling */
+        .royal-card {
+            background: linear-gradient(145deg, #ffffff 0%, #fff0f3 100%);
+            box-shadow: 0 10px 30px rgba(201, 24, 74, 0.12), 0 0 20px rgba(212, 175, 55, 0.2);
+            border: 2px solid #ffccd5;
         }
-        .bullet-list li {
-            display: inline-block;
-            margin: 5px 15px;
-            font-size: 16px;
+
+        /* Animation Keyframes */
+        @keyframes floatPetal {
+            0% { transform: translateY(-10vh) rotate(0deg) scale(0.8); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(100vh) rotate(360deg) scale(1.2); opacity: 0; }
         }
-        .bullet-list li::before {
-            content: "🌸 ";
-            color: #ff4d6d;
+
+        .petal {
+            position: absolute;
+            pointer-events: none;
+            animation: floatPetal 10s linear infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.05); }
+        }
+
+        /* Side Lotus Frame Positioning */
+        .lotus-side {
+            position: absolute;
+            width: 80px;
+            opacity: 0.85;
+            pointer-events: none;
+            z-index: 5;
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>|| श्री गणेशाय नमः ||</h1>
-        <p>विघ्न हरण मंगल करण, श्री गणपति महाराज ।<br>प्रथम निमंत्रण आपको, पूरण करियो काज ।।</p>
-        
-        <h2>शुभ विवाह</h2>
-        <p>परमपिता परमात्मा की असीम अनुकम्पा से</p>
-        
-        <h1 style="font-size: 32px; color: #a4133c;">चि. देवांश राय</h1>
-        <p>सुपुत्र श्रीमती मुन्नी राय एवं श्री बृजेश कुमार राय<br>
-        सुपौत्र श्री बालकृष्ण राय एवं स्मृतिशेष विद्यावती राय<br>
-        ई-487, डी.डी.ए. फ्लैट्स बिंदापुर, नई दिल्ली-110059<br>
-        मो० 9868233442, 9667053966</p>
-        
-        <h2 style="color: #ff4d6d;">संग</h2>
-        
-        <h1 style="font-size: 32px; color: #a4133c;">आयु. रक्षा सिंह</h1>
-        <p>सुपुत्री श्रीमती सीमा सिंह एवं श्री नीरज कुमार सिंह<br>
-        ग्राम + पोस्ट- माधोपुर हजारी,<br>
-        थाना- साहेबगंज, जिला- मुजफ्फरपुर, बिहार</p>
-        
-        <hr style="border:1px solid #ffb3c6; margin: 30px 0;">
-        
-        <h2 style="font-size: 28px;">वैवाहिक कार्यक्रम</h2>
-        
-        <div class="event-card">
-            <h3>मंगलवार, दिनांक 24 नवम्बर, 2026</h3>
-            <p><strong>फलदान एवं तिलकोत्सव</strong> - प्रातः 10:00 बजे</p>
-            <p><strong>मटकोर-हल्दी</strong> - दोपहर 2:00 बजे</p>
-            <p><strong>संगीत</strong> - सायं 5:00 बजे</p>
-            <p><strong>प्रीतिभोज</strong> - रात्रि 8:00 बजे</p>
-            <h4 style="margin-top: 15px; color: #5c0011;">कार्यक्रम स्थल:</h4>
-            <p><strong>सूर्या ग्रैंड बैंक्वेट</strong><br>सेक्टर-7, द्वारका, नई दिल्ली-110075</p>
-            <a class="map-btn" href="https://maps.app.goo.gl/oydXqhxznUbsWApm8" target="_blank">📍 Google Maps पर रास्ता देखें</a>
+<body class="bg-gradient-to-b from-[#fff0f3] via-[#ffe4e8] to-[#fff0f3] text-maroon-950 font-hindi min-h-screen overflow-x-hidden relative flex flex-col justify-between">
+
+    <!-- Background Canvas for Soft Floating Sparkles -->
+    <canvas id="sparkleCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Floating Petal Overlay -->
+    <div id="petalContainer" class="fixed inset-0 pointer-events-none z-10 overflow-hidden"></div>
+
+    <!-- Navigation Header -->
+    <header class="relative z-20 bg-white/90 border-b border-rose-300/60 backdrop-blur-md px-4 py-3 shadow-sm">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full border border-gold-400 flex items-center justify-center bg-rose-100 text-maroon-800 font-bold text-xl shadow-sm">
+                    卐
+                </div>
+                <div>
+                    <h1 class="font-heading text-lg md:text-xl text-maroon-900 leading-tight">चि. देवांश एवं आयु. रक्षा</h1>
+                    <p class="text-xs text-maroon-800/80">पावन परिणयोत्सव - 25 नवम्बर, 2026</p>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="flex items-center gap-2">
+                <button onclick="window.print()" class="px-3 py-1.5 rounded-lg border border-gold-400 bg-white text-maroon-900 hover:bg-rose-50 text-sm transition flex items-center gap-1 shadow-sm font-semibold">
+                    <i class="fas fa-print text-gold-500"></i> प्रिंट / PDF
+                </button>
+            </div>
         </div>
-        
-        <div class="event-card">
-            <h3>बुधवार, दिनांक 25 नवम्बर, 2026</h3>
-            <p><strong>सेहराबन्दी</strong> - सायं 4:00 बजे</p>
-            <p><strong>बारात प्रस्थान</strong> - सायं 5:00 बजे</p>
-            <p><strong>जयमाल</strong> - सायं 7:00 बजे</p>
-            <p><strong>प्रीतिभोज</strong> - रात्रि 8:00 बजे</p>
-            <h4 style="margin-top: 15px; color: #5c0011;">वैवाहिक स्थल:</h4>
-            <p><strong>वासुदेव गार्डन</strong><br>सेक्टर-7, द्वारका, नई दिल्ली-110075</p>
-            <a class="map-btn" href="https://maps.app.goo.gl/vSp5evVgnzYpE3YU9?g_st=ac" target="_blank">📍 Google Maps पर रास्ता देखें</a>
-            <p style="margin-top: 15px; font-style: italic;">हल्दी है चन्दन है, रिश्तों का बन्धन है,<br>हमारे भईया की शादी में आपका अभिनन्दन है ...... माही</p>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="relative z-20 flex-grow container mx-auto px-4 py-8 max-w-5xl">
+
+        <!-- ================= CARD VIEW MODE ================= -->
+        <div id="cardView" class="space-y-12 transition-all duration-500">
+            
+            <!-- Ganesh Vandana / Header Card -->
+            <div class="royal-card rounded-2xl p-6 md:p-10 text-center relative overflow-hidden">
+                
+                <!-- Side Decorative Lotus Flowers (Left & Right) -->
+                <div class="hidden md:block lotus-side left-2 top-10">
+                    <svg viewBox="0 0 100 120" fill="#c9184a">
+                        <path d="M50 20 C40 40 10 50 10 75 C10 95 35 105 50 105 C65 105 90 95 90 75 C90 50 60 40 50 20 Z" fill="#ff8fa3" opacity="0.4"/>
+                        <path d="M50 30 C42 48 20 58 20 78 C20 92 38 100 50 100 C62 100 80 92 80 78 C80 58 58 48 50 30 Z" fill="#ff4d6d" opacity="0.6"/>
+                        <path d="M50 40 C45 55 30 65 30 80 C30 90 40 95 50 95 C60 95 70 90 70 80 C70 65 55 55 50 40 Z" fill="#c9184a"/>
+                        <circle cx="50" cy="70" r="5" fill="#f6d370"/>
+                    </svg>
+                </div>
+                <div class="hidden md:block lotus-side right-2 top-10 transform scale-x-[-1]">
+                    <svg viewBox="0 0 100 120" fill="#c9184a">
+                        <path d="M50 20 C40 40 10 50 10 75 C10 95 35 105 50 105 C65 105 90 95 90 75 C90 50 60 40 50 20 Z" fill="#ff8fa3" opacity="0.4"/>
+                        <path d="M50 30 C42 48 20 58 20 78 C20 92 38 100 50 100 C62 100 80 92 80 78 C80 58 58 48 50 30 Z" fill="#ff4d6d" opacity="0.6"/>
+                        <path d="M50 40 C45 55 30 65 30 80 C30 90 40 95 50 95 C60 95 70 90 70 80 C70 65 55 55 50 40 Z" fill="#c9184a"/>
+                        <circle cx="50" cy="70" r="5" fill="#f6d370"/>
+                    </svg>
+                </div>
+
+                <!-- Ganesha Symbol -->
+                <div class="w-24 h-24 mx-auto mb-4 relative flex items-center justify-center">
+                    <div class="absolute inset-0 border-2 border-rose-300 rounded-full animate-spin" style="animation-duration: 25s;"></div>
+                    <svg class="w-16 h-16 text-maroon-800 fill-current" viewBox="0 0 100 100">
+                        <path d="M50,10 C45,10 40,15 40,22 C40,25 42,28 45,30 C35,32 25,40 25,55 C25,70 38,82 50,90 C62,82 75,70 75,55 C75,40 65,32 55,30 C58,28 60,25 60,22 C60,15 55,10 50,10 Z M50,18 C53,18 55,20 55,22 C55,24 53,26 50,26 C47,26 45,24 45,22 C45,20 47,18 50,18 Z M50,35 C60,35 68,43 68,54 C68,64 58,74 50,80 C42,74 32,64 32,54 C32,43 40,35 50,35 Z"/>
+                        <circle cx="50" cy="48" r="4"/>
+                        <path d="M46,56 Q50,65 58,58" fill="none" stroke="currentColor" stroke-width="3"/>
+                    </svg>
+                </div>
+
+                <p class="text-maroon-900 text-lg md:text-xl font-bold tracking-wider mb-1">॥ श्री गणेशाय नमः ॥</p>
+                <p class="text-maroon-800/90 text-sm md:text-base italic mb-4 max-w-2xl mx-auto">
+                    "वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ। निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा॥"
+                </p>
+                <p class="text-xs md:text-sm text-maroon-700/80 mb-6">परमपिता परमात्मा की असीम अनुकम्पा से</p>
+
+                <!-- Wedding Calligraphy Title -->
+                <div class="my-6">
+                    <h2 class="text-4xl md:text-6xl font-heading gold-gradient-text tracking-wide mb-2">शुभ विवाह</h2>
+                    <div class="flex items-center justify-center gap-4 text-rose-500">
+                        <span class="h-0.5 w-16 bg-gradient-to-r from-transparent to-rose-400"></span>
+                        <span class="text-xl text-maroon-800">♦</span>
+                        <span class="text-sm md:text-base text-maroon-900 font-bold">बुधवार, दिनांक 25 नवम्बर, 2026</span>
+                        <span class="text-xl text-maroon-800">♦</span>
+                        <span class="h-0.5 w-16 bg-gradient-to-l from-transparent to-rose-400"></span>
+                    </div>
+                </div>
+
+                <!-- Bride & Groom Highlight -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center my-8 bg-rose-50/80 p-6 rounded-xl border border-rose-200 shadow-sm">
+                    <!-- Groom -->
+                    <div class="md:col-span-2 text-center md:text-right space-y-1">
+                        <span class="text-xs text-maroon-800 font-semibold px-3 py-0.5 border border-rose-300 rounded-full bg-white">वर</span>
+                        <h3 class="text-2xl md:text-3xl font-heading text-maroon-900 font-bold">चि. देवांश राय</h3>
+                        <p class="text-xs md:text-sm text-maroon-800">सुपुत्र: श्रीमती मुन्नी राय एवं श्री बृजेश कुमार राय</p>
+                        <p class="text-xs text-gray-600">सुपौत्र: श्री बालकृष्ण राय एवं स्मृतिशेष विद्यावती राय</p>
+                        <p class="text-xs text-maroon-700">ई-487, डी.डी.ए. फ्लैट्स बिंदापुर, नई दिल्ली</p>
+                    </div>
+
+                    <!-- Sang Emblem -->
+                    <div class="md:col-span-1 flex flex-col items-center justify-center my-2 md:my-0">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-rose-200 to-rose-300 border-2 border-rose-400 flex items-center justify-center shadow-md">
+                            <span class="font-heading text-xl text-maroon-900 font-bold">संग</span>
+                        </div>
+                    </div>
+
+                    <!-- Bride -->
+                    <div class="md:col-span-2 text-center md:text-left space-y-1">
+                        <span class="text-xs text-maroon-800 font-semibold px-3 py-0.5 border border-rose-300 rounded-full bg-white">वधू</span>
+                        <h3 class="text-2xl md:text-3xl font-heading text-maroon-900 font-bold">आयु. रक्षा सिंह</h3>
+                        <p class="text-xs md:text-sm text-maroon-800">सुपुत्री: श्रीमती सीमा सिंह एवं श्री नीरज कुमार सिंह</p>
+                        <p class="text-xs text-gray-600">ग्राम + पोस्ट - माधोपुर हजारी, थाना- साहेबगंज</p>
+                        <p class="text-xs text-maroon-700">जिला- मुजफ्फरपुर, बिहार</p>
+                    </div>
+                </div>
+
+                <p class="text-sm md:text-base text-maroon-800 mt-4">
+                    के <span class="text-rose-600 font-bold text-lg">शुभ-विवाहोत्सव</span> की मांगलिक बेला पर आप सपरिवार सादर आमंत्रित हैं।
+                </p>
+            </div>
+
+            <!-- Program Details Card (Schedule & Venue) -->
+            <div class="royal-card rounded-2xl p-6 md:p-10 text-center relative overflow-hidden">
+                
+                <!-- Side Lotus Accents -->
+                <div class="hidden md:block lotus-side left-2 bottom-6 transform rotate-45">
+                    <svg viewBox="0 0 100 100" fill="#ff4d6d" opacity="0.5">
+                        <path d="M50 10 C30 30 10 50 50 90 C90 50 70 30 50 10 Z"/>
+                    </svg>
+                </div>
+                <div class="hidden md:block lotus-side right-2 bottom-6 transform -rotate-45">
+                    <svg viewBox="0 0 100 100" fill="#ff4d6d" opacity="0.5">
+                        <path d="M50 10 C30 30 10 50 50 90 C90 50 70 30 50 10 Z"/>
+                    </svg>
+                </div>
+
+                <h3 class="text-2xl md:text-4xl font-heading gold-gradient-text mb-2">॥ वैवाहिक कार्यक्रम ॥</h3>
+                <p class="text-xs md:text-sm text-maroon-800/80 mb-6 italic">
+                    "विघ्न हरण मंगल करण, श्री गणपति महाराज। प्रथम निमंत्रण आपको, पूर्ण करियो काज॥"
+                </p>
+
+                <!-- Days Timeline Container -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mt-8">
+                    
+                    <!-- Day 1: Tuesday 24 Nov -->
+                    <div class="bg-white/90 p-6 rounded-xl border border-rose-200 shadow-sm relative">
+                        <div class="absolute -top-3 left-4 bg-gradient-to-r from-rose-400 to-rose-500 text-white font-bold px-3 py-0.5 rounded-full text-xs shadow-sm">
+                            मंगलवार, 24 नवम्बर, 2026
+                        </div>
+
+                        <ul class="mt-4 space-y-3 text-sm md:text-base">
+                            <li class="flex justify-between border-b border-rose-100 pb-2">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-om text-rose-500 mr-2"></i>फलदान एवं तिलकोत्सव</span>
+                                <span class="text-gray-700">प्रातः 10:00 बजे</span>
+                            </li>
+                            <li class="flex justify-between border-b border-rose-100 pb-2">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-drum text-rose-500 mr-2"></i>मटकोर-हल्दी</span>
+                                <span class="text-gray-700">दोपहर 2:00 बजे</span>
+                            </li>
+                            <li class="flex justify-between border-b border-rose-100 pb-2">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-music text-rose-500 mr-2"></i>संगीत</span>
+                                <span class="text-gray-700">सायं 5:00 बजे</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-utensils text-rose-500 mr-2"></i>प्रीतिभोज</span>
+                                <span class="text-gray-700">रात्रि 8:00 बजे</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 pt-4 border-t border-rose-200">
+                            <p class="text-xs text-maroon-800 font-bold uppercase tracking-wider mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i> कार्यक्रम स्थल:</p>
+                            <p class="text-base font-bold text-maroon-900">सूर्या ग्रैंड बैंक्वेट</p>
+                            <p class="text-xs text-gray-600 mb-3">सेक्टर-7, द्वारका, नई दिल्ली-110075</p>
+                            
+                            <!-- Google Maps Location Link Button -->
+                            <a href="https://maps.app.goo.gl/oydXqhxznUbsWApm8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-sm transition hover:scale-105">
+                                <i class="fas fa-location-dot"></i> Google Maps पर रास्ता देखें
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Day 2: Wednesday 25 Nov -->
+                    <div class="bg-white/90 p-6 rounded-xl border border-rose-200 shadow-sm relative">
+                        <div class="absolute -top-3 left-4 bg-gradient-to-r from-rose-400 to-rose-500 text-white font-bold px-3 py-0.5 rounded-full text-xs shadow-sm">
+                            बुधवार, 25 नवम्बर, 2026
+                        </div>
+
+                        <ul class="mt-4 space-y-3 text-sm md:text-base">
+                            <li class="flex justify-between border-b border-rose-100 pb-2">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-crown text-rose-500 mr-2"></i>सेहराबन्दी</span>
+                                <span class="text-gray-700">सायं 4:00 बजे</span>
+                            </li>
+                            <li class="flex justify-between border-b border-rose-100 pb-2">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-horse text-rose-500 mr-2"></i>बारात प्रस्थान</span>
+                                <span class="text-gray-700">सायं 5:00 बजे</span>
+                            </li>
+                            <li class="flex justify-between border-b border-rose-100 pb-2">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-gem text-rose-500 mr-2"></i>जयमाल</span>
+                                <span class="text-gray-700">सायं 7:00 बजे</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="font-semibold text-maroon-900"><i class="fas fa-glass-cheers text-rose-500 mr-2"></i>पाणिग्रहण एवं प्रीतिभोज</span>
+                                <span class="text-gray-700">रात्रि 8:00 बजे</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 pt-4 border-t border-rose-200">
+                            <p class="text-xs text-maroon-800 font-bold uppercase tracking-wider mb-1"><i class="fas fa-map-marker-alt text-rose-500 mr-1"></i> वैवाहिक स्थल:</p>
+                            <p class="text-base font-bold text-maroon-900">वासुदेव गार्डन</p>
+                            <p class="text-xs text-gray-600 mb-3">सेक्टर-7, द्वारका, नई दिल्ली-110075</p>
+                            
+                            <!-- Google Maps Location Link Button for Vasudev Garden -->
+                            <a href="https://maps.app.goo.gl/vSp5evVgnzYpE3YU9?g_st=ac" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-sm transition hover:scale-105">
+                                <i class="fas fa-location-dot"></i> Google Maps पर रास्ता देखें
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Poem Note -->
+                <div class="mt-8 bg-rose-100/70 p-4 rounded-xl border border-rose-300 text-center">
+                    <p class="text-maroon-900 font-hindi italic text-sm md:text-base">
+                        "हल्दी है चन्दन है, रिश्तों का बन्धन है,<br>
+                        हमारे भैया की शादी में आपका अभिनन्दन है ...... <span class="font-bold text-rose-600">माही</span>"
+                    </p>
+                </div>
+            </div>
+
+            <!-- Family & Hosts Card -->
+            <div class="royal-card rounded-2xl p-6 md:p-8 text-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Darshanabhilashi -->
+                    <div class="text-left bg-white/80 p-4 rounded-lg border border-rose-200 shadow-sm">
+                        <h4 class="text-lg font-bold text-maroon-900 border-b border-rose-200 pb-2 mb-3">
+                            <i class="fas fa-users text-rose-500 mr-2"></i> दर्शनाभिलाषी :-
+                        </h4>
+                        <ul class="text-xs md:text-sm text-gray-700 space-y-1.5 list-disc list-inside">
+                            <li>घनश्याम राय, अनंत कुमार राय</li>
+                            <li>विनोद कुमार राय, अखिलेश कुमार राय</li>
+                            <li>सच्चिदानंद राय एवं समस्त राय परिवार</li>
+                        </ul>
+                    </div>
+
+                    <!-- Vineet -->
+                    <div class="text-left bg-white/80 p-4 rounded-lg border border-rose-200 shadow-sm">
+                        <h4 class="text-lg font-bold text-maroon-900 border-b border-rose-200 pb-2 mb-3">
+                            <i class="fas fa-envelope-open-text text-rose-500 mr-2"></i> विनीत :-
+                        </h4>
+                        <p class="text-xs md:text-sm text-maroon-900 font-semibold">श्रीकृष्ण राय, बालकृष्ण राय</p>
+                        <p class="text-xs text-gray-600 mt-1">ग्राम-लालपुर, पोस्ट-बघराई, जिला-गोरखपुर (उत्तर प्रदेश)</p>
+                    </div>
+                </div>
+
+                <!-- Contact & Address -->
+                <div class="mt-8 pt-6 border-t border-rose-200 flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-maroon-900 gap-4">
+                    <div>
+                        <span class="font-bold text-rose-600">प्रेषक:</span> श्रीमती मुन्नी राय एवं श्री बृजेश कुमार राय
+                        <br><span class="text-gray-700">ई-487, डी.डी.ए. फ्लैट्स बिंदापुर, नई दिल्ली-110059</span>
+                    </div>
+                    <div class="flex items-center gap-2 font-semibold">
+                        <i class="fas fa-phone-alt text-rose-500"></i>
+                        <span>मो० 9868233442, 9667053966</span>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        
-        <hr style="border:1px solid #ffb3c6; margin: 30px 0;">
-        
-        <h3>दर्शनाभिलाषी:</h3>
-        <ul class="bullet-list">
-            <li>घनश्याम राय</li>
-            <li>अनंत कुमार राय</li>
-            <li>विनोद कुमार राय</li>
-            <li>अखिलेश कुमार राय</li>
-            <li>सच्चिदानन्द राय</li>
-            <li>एवं समस्त राय परिवार</li>
-        </ul>
-        
-        <h3 style="margin-top: 20px;">विनीत:</h3>
-        <p>श्रीकृष्ण राय, बालकृष्ण राय<br>
-        ग्राम-लालपुर, पोस्ट-बघराई, जिला-गोरखपुर<br>
-        उत्तर प्रदेश</p>
-    </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-20 bg-white/80 border-t border-rose-200 py-4 text-center text-xs text-maroon-800">
+        <p>॥ मङ्गलम् भगवान् विष्णुः, मङ्गलम् गरुडध्वजः ॥ Devansh & Raksha Wedding Celebration 2026</p>
+    </footer>
+
+    <!-- SCRIPT SECTION -->
+    <script>
+        // --- Floating Pink Petals Creator ---
+        function createPetals() {
+            const container = document.getElementById('petalContainer');
+            const petalCount = 18;
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + 'vw';
+                petal.style.animationDuration = (7 + Math.random() * 8) + 's';
+                petal.style.animationDelay = (Math.random() * 5) + 's';
+                
+                petal.innerHTML = `
+                    <svg width="22" height="22" viewBox="0 0 30 30" fill="#ff8fa3" opacity="0.7">
+                        <path d="M15,0 C25,10 25,20 15,30 C5,20 5,10 15,0 Z" />
+                    </svg>
+                `;
+                container.appendChild(petal);
+            }
+        }
+        createPetals();
+
+        // --- Sparkle Canvas Background ---
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.4;
+                this.speedY = (Math.random() - 0.5) * 0.4;
+                this.opacity = Math.random() * 0.6 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.fillStyle = `rgba(201, 24, 74, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 50; i++) particles.push(new Particle());
+
+        function animateSparkles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateSparkles);
+        }
+        animateSparkles();
+    </script>
 </body>
 </html>
