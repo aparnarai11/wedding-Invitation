@@ -1,0 +1,12 @@
+{
+  "name": "wedding-invitation",
+  "version": "1.0.0",
+  "description": "Interactive Wedding Invitation for Devansh & Raksha",
+  "main": "index.html",
+  "scripts": {
+    "start": "echo 'Static HTML project. No build steps required.'"
+  },
+  "keywords": ["wedding", "invitation"],
+  "author": "",
+  "license": "ISC"
+}
